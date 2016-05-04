@@ -1,0 +1,7 @@
+*.agdai
+*.hi
+*.o
+*.agda#
+*.agda~
+.#*.agda
+src/Everything.agda
