@@ -5,3 +5,4 @@
 *.agda~
 .#*.agda
 src/Everything.agda
+**/MAlonzo/
