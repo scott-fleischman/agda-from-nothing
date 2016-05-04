@@ -1,0 +1,3 @@
+name: agda-from-nothing
+include:
+  src
