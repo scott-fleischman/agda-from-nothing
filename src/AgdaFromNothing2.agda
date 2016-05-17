@@ -133,9 +133,12 @@ proof = refl
 proof1 : (x : Number) → Equals (zero + x) x
 proof1 x = refl
 
+proof2with : {x y : Number} → Equals x y → Equals (next x) (next y)
+proof2with refl = refl
+
 proof2 : (x : Number) → Equals (x + zero) x
 proof2 zero = refl
-proof2 (next x) rewrite proof2 x = refl
+proof2 (next x) = proof2with (proof2 x)
 
 -- Equals (next (x + zero)) (next x)
 --        x + zero = x

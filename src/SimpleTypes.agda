@@ -111,11 +111,85 @@ zero ≤? _ = true
 (suc x) ≤? zero = false
 (suc x) ≤? (suc y) = x ≤? y
 
+infix 10 _≤_ _≰_
+data _≤_ : Number → Number → Set where
+  zero≤ : (n : Number) → zero ≤ n
+  suc≤ : (n m : Number) → n ≤ m → suc n ≤ suc m
+
+data _≰_ : Number → Number → Set where
+  zero≰ : (n : Number) → suc n ≰ zero
+  suc≰ : (n m : Number) → n ≰ m → suc n ≰ suc m
+
+flip≰ : (n m : Number) → n ≰ m → m ≤ n
+flip≰ .(suc n) .0 (zero≰ n) = zero≤ (suc n)
+flip≰ .(suc n) .(suc m) (suc≰ n m x) = suc≤ m n (flip≰ n m x)
+
+data Decidable≤ : Number → Number → Set where
+  yes : {n m : Number} → n ≤ m → Decidable≤ n m
+  no : {n m : Number} → n ≰ m → Decidable≤ n m
+
+numberDecidable≤ : (n m : Number) → Decidable≤ n m
+numberDecidable≤ zero m = yes (zero≤ m)
+numberDecidable≤ (suc n) zero = no (zero≰ n)
+numberDecidable≤ (suc n) (suc m) with numberDecidable≤ n m
+numberDecidable≤ (suc n) (suc m) | yes x = yes (suc≤ n m x)
+numberDecidable≤ (suc n) (suc m) | no x = no (suc≰ n m x)
+
+
+{-
+data Number : Set where
+  zero : Number
+  suc_ : Number → Number
+-}
+
+open import Agda.Primitive
+
+--infixr 20 _∷_
+data List (la : Level) : Set (lsuc la) where
+  end : List la
+  add : (A : Set la) → A → List la → List la
+
+mixed : List lzero
+mixed = add Breakfast bacon (add Number 6 end)
+
+nestedMixed : List (lsuc lzero)
+nestedMixed = add (List lzero) mixed end
+
+
+max : Number → Number → Number
+max zero y = y
+max (suc x) zero = suc x
+max (suc x) (suc y) = suc (max x y)
+
+data Max : Number → Number → Number → Set where
+  zero : (m : Number) → Max m zero m
+  suc-zero : (n : Number) → Max (suc n) (suc n) zero
+  suc-suc : (x n m : Number) → (Max x n m) → Max (suc x) (suc n) (suc m)
+
+
+data Ordered : Number → Set where
+  start : (n : Number) → Ordered n
+  next : (n : Number) → {m : Number} → (n ≤ m) → Ordered m → Ordered n
+
+addInOrder : (n : Number) → {m : Number} → Ordered m → Ordered (max n m)
+addInOrder n (start m) with numberDecidable≤ n m
+addInOrder n (start m) | yes x = next n x (start (max n m))
+addInOrder n (start m) | no x = {!next m (flip≰ n m x) (start n)!}
+addInOrder n (next m x xs) = {!!}
+
+{-
+with numberDecidable≤ n m
+addInOrder n xs | yes x = {!!}
+addInOrder n xs | no x = {!!}
+-}
 
 data Drink : Set where
   coffee juice : Drink
-data Emotion : Set where
-  happy sad angry afraid surprised digusted : Emotion
+
+data Emotion-Traditional : Set where
+  happy sad angry afraid surprised digusted : Emotion-Traditional
+data Emotion-Simplified : Set where
+  happy sad angry afraid : Emotion-Simplified
 
 
 open import Agda.Builtin.Equality
@@ -129,3 +203,4 @@ p1 false true true = refl
 p1 false true false = refl
 p1 false false true = refl
 p1 false false false = refl
+

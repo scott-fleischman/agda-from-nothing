@@ -1,0 +1,39 @@
+Data Types (Take 1)
+
+data Name : Set where
+  constructor1 : Name
+  constructor2 : Name
+  constructor3 : Name
+  ...
+
+
+
+Functions (Take 1)
+
+Pair every element of a set (domain) with an element of another set (codomain)
+
+name : DomainSet → CodomainSet
+name constructor1 = ...
+name constructor2 = ...
+name constructor3 = ...
+...
+
+
+Functions (Take 2)
+
+name : DomainSet → CodomainSet
+name x = ...x...
+     ^      ^
+     |______|
+ variable name which maybe be used in the definition
+
+
+Functions (Take 3) — Dependent Functions 
+
+name : (n1 : S1) → (n2 : S2) → (n3 : S3)
+        ^            ^___^       ^___^
+        |______________|___________|
+    each n1, n2, n3 can appear in expressions to the right
+
+name n1' n2' n3' = ...
+	n1, n2, n3 from type signature not in scope here
