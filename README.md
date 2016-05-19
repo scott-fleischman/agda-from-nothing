@@ -14,3 +14,6 @@ These instructions may work better than the ones on the Agda wiki.
 3. Install [Aquamacs](http://aquamacs.org/)
 4. In a terminal run: `agda-mode setup`
 5. (Restart Aquamacs)
+
+#### Docker
+Full workshop image coming soon… For now, see [banacorn/docker-agda](https://github.com/banacorn/docker-agda).
