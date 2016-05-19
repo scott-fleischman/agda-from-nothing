@@ -10,6 +10,10 @@ not : Boolean → Boolean
 not false = true
 not true = false
 
+infixl 6 _or_
+infixl 7 _and_
+infixl 4 _≡_
+
 _and_ : Boolean → Boolean → Boolean
 false and _ = false
 true and y = y
