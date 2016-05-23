@@ -1,4 +1,4 @@
-module 03-Logic where
+module 04-Logic where
 
 infixl 6 _or_
 infixl 7 _and_
