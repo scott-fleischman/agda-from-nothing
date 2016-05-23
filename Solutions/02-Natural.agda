@@ -51,6 +51,9 @@ x ≢ y = x ≡ y → Empty
 2+2≢5 : 2 + 2 ≢ 5
 2+2≢5 ()
 
+1+1≢3 : 1 + 1 ≢ 3
+1+1≢3 ()
+
 2^3 : 2 ^ 3 ≡ 8
 2^3 = equal
 
@@ -65,14 +68,14 @@ x*0 zero = equal
 x*0 (suc x) = x*0 x
 
 symmetry
-  : {a : Level} → {X : Set a} → {x y : X}
+  : {x y : Natural}
   → x ≡ y
   → y ≡ x
 symmetry equal = equal
 
 congruence
-  : {a b : Level} → {X : Set a} → {Y : Set b} → {x y : X}
-  → (f : X → Y)
+  : {x y : Natural}
+  → (f : Natural → Natural)
   → x ≡ y
   → f x ≡ f y
 congruence f equal = equal
