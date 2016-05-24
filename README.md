@@ -10,6 +10,8 @@ I created a Docker image with Agda, Emacs and the exercises. See [scottfleischma
 
 `docker run -it scottfleischman/agda-from-nothing`
 
+**Note** The Mac Terminal has issues sending common control sequences such as Control+Comma. It may be better to do a full install as below.
+
 #### Official Agda installation instructions
 * http://agda.readthedocs.io/en/latest/getting-started/installation.html
 * http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Download
