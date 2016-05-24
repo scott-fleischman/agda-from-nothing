@@ -7,6 +7,8 @@ A workshop on learning Agda with minimal prerequisites.
 #### Docker with Emacs and exercises
 I created a Docker image with Agda, Emacs and the exercises. See [scottfleischman/agda-from-nothing](https://hub.docker.com/r/scottfleischman/agda-from-nothing/)
 
+`docker run -it scottfleischman/agda-from-nothing`
+
 #### Official Agda installation instructions
 * http://agda.readthedocs.io/en/latest/getting-started/installation.html
 * http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Download
