@@ -3,6 +3,7 @@
 A workshop on learning Agda with minimal prerequisites.
 
 ### Installing Agda
+The exercises are written for Agda 2.5.1.
 
 #### Docker with Emacs and exercises
 I created a Docker image with Agda, Emacs and the exercises. See [scottfleischman/agda-from-nothing](https://hub.docker.com/r/scottfleischman/agda-from-nothing/)
