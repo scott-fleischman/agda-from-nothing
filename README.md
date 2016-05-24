@@ -29,3 +29,33 @@ I created a Docker image with Agda, Emacs and the exercises. See [scottfleischma
 
 ##### Docker with Agda only
 See [banacorn/docker-agda](https://github.com/banacorn/docker-agda).
+
+### Emacs Keybindings
+See the [Agda docs](http://agda.readthedocs.io/en/latest/tools/emacs-mode.html) for all of the keybindsings. Here are ones I commonly use. Note `C-` means `Control+`.
+
+#### Global (can be used anywhere)
+* C-c C-l — Load file. I use this constantly.
+* C-c C-f	— Move to next goal (**f**orward)
+* C-c C-b — Move to previous goal (**b**ackwards)
+* C-c C-d — Infer (**d**educe) type. Type in any expression and it infers the type.
+* C-c C-n — Compute **n**ormal form. In other words, reduces the expression as much as possible.
+* C-c C-g — Quit what command sequence you started.
+
+#### In a hole/goal
+* C-c C-c — Case split. Type in an argument name and it creates lines for each possible case. It works with multiple arguments.
+* C-u C-c C-Comma — Show unnormalized goal type and context.
+* C-u C-u C-c C-Comma — Show fully normalized goal type and context.
+* C-c C-Space — Give (fill goal). Type checks the expression you typed in the hole, and if successful fills the hole.
+* C-c C-r — Refine. Partial give: makes new holes for missing arguments. Essentially, if the hole is constrained to one possible solution, starts filling in that solution using any expression you've entered so far.
+* C-c C-a — Automatic Proof Search (Auto). Tries to fill the hole with any solution. Note—this may not be a correct solution if the types aren't precise enough to constrain the term to only correct ones. Note also that it often fails to find a solution.
+
+#### Unicode characters
+* `\r-` or `\to` for `→`
+* `\==` for `≡`
+* `\==n` for `≢`
+* `\all` for `∀`
+* `\<=` for `≤`
+* `\<=n` for `≰`
+* `\ell` for `ℓ`
+* `\lambda` or `\Gl` for `λ`
+* `\'` for `′`
