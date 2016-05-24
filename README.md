@@ -39,7 +39,7 @@ See the [Agda docs](http://agda.readthedocs.io/en/latest/tools/emacs-mode.html) 
 * C-c C-b — Move to previous goal (**b**ackwards)
 * C-c C-d — Infer (**d**educe) type. Type in any expression and it infers the type.
 * C-c C-n — Compute **n**ormal form. In other words, reduces the expression as much as possible.
-* C-c C-g — Quit what command sequence you started.
+* C-g — Quit what command sequence you started.
 
 #### In a hole/goal
 * C-c C-c — Case split. Type in an argument name and it creates lines for each possible case. It works with multiple arguments.
