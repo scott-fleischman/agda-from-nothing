@@ -61,3 +61,12 @@ See the [Agda docs](http://agda.readthedocs.io/en/latest/tools/emacs-mode.html) 
 * `\ell` for `ℓ`
 * `\lambda` or `\Gl` for `λ`
 * `\'` for `′`
+* `\::` for `∷` (it looks like two colons, but it is a single Unicode character)
+* `\_0` for `₀` (subscript 0)
+* `\_1` for `₁` (and so on)
+* `\^0` for `⁰` (superscript 0)
+* `\^1` for `¹` (and so on)
+* `\in` for `∈`
+* `\ni` for `∋`
+* `lub` for `⊔` (least upper bound; max)
+* To see info on a character under the cursor, use `C-u C-x Equals`
