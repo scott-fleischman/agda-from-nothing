@@ -46,7 +46,9 @@ See the [Agda docs](http://agda.readthedocs.io/en/latest/tools/emacs-mode.html) 
 * C-u C-c C-Comma — Show unnormalized goal type and context.
 * C-u C-u C-c C-Comma — Show fully normalized goal type and context.
 * C-c C-Space — Give (fill goal). Type checks the expression you typed in the hole, and if successful fills the hole.
-* C-c C-r — Refine. Partial give: makes new holes for missing arguments. Essentially, if the hole is constrained to one possible solution, starts filling in that solution using any expression you've entered so far.
+* C-c C-r — Refine. Partial give: makes new holes for missing arguments.
+  * If you've entered an expression in the hole, it will fill in the hole with that expression and make new holes for any missing arguments.
+  * If you haven't entered anything in the hole, and if the hole is constrained to one constructor, it fills in the hole with that constructor and makes new holes for each of the constructor's arguments.
 * C-c C-a — Automatic Proof Search (Auto). Tries to fill the hole with any solution. Note—this may not be a correct solution if the types aren't precise enough to constrain the term to only correct ones. Note also that it often fails to find a solution.
 
 #### Unicode characters
