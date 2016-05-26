@@ -68,5 +68,7 @@ See the [Agda docs](http://agda.readthedocs.io/en/latest/tools/emacs-mode.html) 
 * `\^1` for `¹` (and so on)
 * `\in` for `∈`
 * `\ni` for `∋`
-* `lub` for `⊔` (least upper bound; max)
+* `\lub` for `⊔` (least upper bound; max)
+* `\Pi` for `Π`
+* `\Sigma` or `\GS` for `Σ`
 * To see info on a character under the cursor, use `C-u C-x Equals`
