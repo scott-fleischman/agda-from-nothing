@@ -75,5 +75,5 @@ See the [Agda docs](http://agda.readthedocs.io/en/latest/tools/emacs-mode.html) 
 
 ### Resources
 * [Agda Documentation (new, unfinished)](http://agda.readthedocs.io/)
-* The [(Agda Wiki)](http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation) has links to other resources.
+* The [Agda Wiki](http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation) has links to other resources.
 * Book: [Verified Functional Programming in Agda](http://www.amazon.com/Verified-Functional-Programming-Aaron-Stump/dp/1970001240) by Aaron Stump
